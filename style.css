@@ -266,3 +266,185 @@ body {
         letter-spacing: 5px;
     }
 }
+
+/* HERO DASHBOARD */
+
+.hero-dashboard {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 0.62fr;
+    gap: 24px;
+    align-items: stretch;
+
+    margin: 45px 0 55px;
+    position: relative;
+}
+
+/* Judul dan deskripsi */
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.hero-text h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(36px, 4vw, 68px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.15;
+
+    color: #f2e5cb;
+    margin: 0 0 25px;
+}
+
+.hero-text h1 span {
+    color: #d8ad58;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #a99a83;
+    max-width: 480px;
+    margin: 0;
+}
+
+/* Kotak RTP rata-rata */
+
+.hero-average {
+    background: linear-gradient(
+        145deg,
+        #17110d,
+        #100c09
+    );
+
+    border: 1px solid rgba(216, 173, 88, 0.22);
+    border-radius: 30px;
+
+    min-height: 280px;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #a99a83;
+}
+
+.average-number {
+    font-family: Georgia, serif;
+    font-size: clamp(65px, 7vw, 115px);
+    font-weight: 400;
+    color: #d8ad58;
+
+    margin-top: 35px;
+    line-height: 1;
+}
+
+.average-number span {
+    font-size: 38px;
+    margin-left: 5px;
+}
+
+/* Game dan provider */
+
+.hero-stats {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+}
+
+.hero-stat-card {
+    background: linear-gradient(
+        145deg,
+        #17110d,
+        #100c09
+    );
+
+    border: 1px solid rgba(216, 173, 88, 0.22);
+    border-radius: 30px;
+
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-number {
+    font-family: Georgia, serif;
+    font-size: 56px;
+    color: #f2e5cb;
+    margin-top: 20px;
+}
+
+/* Responsive tablet dan HP */
+
+@media (max-width: 900px) {
+    .hero-dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text {
+        grid-column: 1 / -1;
+    }
+
+    .hero-average {
+        min-height: 250px;
+        padding: 30px;
+    }
+
+    .hero-stats {
+        gap: 15px;
+    }
+
+    .hero-stat-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .hero-dashboard {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 30px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .hero-average {
+        min-height: 200px;
+    }
+
+    .average-number {
+        font-size: 75px;
+        margin-top: 25px;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .hero-stat-card {
+        min-height: 130px;
+        border-radius: 22px;
+        padding: 22px;
+    }
+
+    .stat-number {
+        font-size: 42px;
+    }
+}
