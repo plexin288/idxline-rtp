@@ -33,6 +33,24 @@ body::before {
     animation: dragonMove 20s ease-in-out infinite alternate;
 }
 
+/* GOLD GLOW BACKGROUND */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse 600px 400px at 50% 35%,
+            rgba(255, 190, 70, 0.22),
+            rgba(218, 145, 20, 0.08) 45%,
+            transparent 75%
+        );
+
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* GERAK BACKGROUND PELAN */
 @keyframes dragonMove {
     from {
