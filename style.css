@@ -29,7 +29,7 @@ body {
 
 .logo {
     color: #d8ad58;
-    font-size: 30px;
+    font-size: 42px;
     letter-spacing: 8px;
     font-family: Georgia, serif;
 }
@@ -262,7 +262,7 @@ body {
     }
 
     .logo {
-        font-size: 23px;
+        font-size: 28px;
         letter-spacing: 5px;
     }
 }
