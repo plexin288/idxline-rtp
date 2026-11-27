@@ -6,10 +6,46 @@
 }
 
 body {
-    background: #0b0805;
+    background: #080603;
     color: #f5e7c8;
     font-family: Arial, sans-serif;
+
+    position: relative;
+    isolation: isolate;
 }
+
+/* BACKGROUND NAGA */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(8, 6, 3, 0.25),
+            rgba(8, 6, 3, 0.35)
+        ),
+        url("./dragon-bg.png") center center / cover no-repeat;
+
+    z-index: -1;
+    pointer-events: none;
+
+    animation: dragonMove 20s ease-in-out infinite alternate;
+}
+
+/* GERAK BACKGROUND PELAN */
+@keyframes dragonMove {
+    from {
+        transform: scale(1);
+        filter: brightness(0.85);
+    }
+
+    to {
+        transform: scale(1.05);
+        filter: brightness(1.05);
+    }
+}
+
 
 .container {
     max-width: 1440px;
