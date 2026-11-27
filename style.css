@@ -468,7 +468,7 @@ body {
     padding: 2px;
 
     background: conic-gradient(
-        from 0deg,
+        from var(--gold-angle),
         transparent 0deg,
         transparent 270deg,
         #b8862b 300deg,
@@ -490,20 +490,19 @@ body {
 }
 
 /* Card tidak ikut berputar */
+
+@property --gold-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
 @keyframes cardGoldLight {
-    0% {
-        background-position: 0 0;
-        filter: brightness(0.8);
-    }
-
-    50% {
-        filter: brightness(1.4);
-    }
-
-    100% {
-        filter: brightness(0.8);
+    to {
+        --gold-angle: 360deg;
     }
 }
+
 
 /* Efek glow saat hover */
 .game-card:hover {
