@@ -448,3 +448,60 @@ body {
         font-size: 42px;
     }
 }
+
+/* GOLD NEON ORBIT */
+.game-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+/* Cahaya emas yang bergerak */
+.game-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    padding: 2px;
+    border-radius: inherit;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 250deg,
+        #b8862b 285deg,
+        #ffd76a 310deg,
+        #fff5c2 325deg,
+        #e6ad3c 340deg,
+        transparent 360deg
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    animation: goldOrbit 4s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Glow emas di sekitar border */
+.game-card:hover {
+    border-color: #d6a943;
+    box-shadow:
+        0 0 12px rgba(218, 168, 57, 0.15),
+        0 0 28px rgba(218, 168, 57, 0.08);
+}
+
+/* Gerakan cahaya */
+@keyframes goldOrbit {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
