@@ -557,7 +557,13 @@ body::before {
     }
 }
 
-/* GOLDEN LIGHT BACKGROUND */
+/* GOLDEN AMBIENT LIGHT */
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Cahaya emas di belakang dashboard */
 body::after {
     content: "";
     position: fixed;
@@ -567,32 +573,38 @@ body::after {
 
     background:
         radial-gradient(
-            circle at 25% 35%,
-            rgba(218, 168, 57, 0.22),
-            transparent 35%
+            ellipse at 25% 35%,
+            rgba(218, 168, 57, 0.16),
+            transparent 45%
         ),
         radial-gradient(
-            circle at 75% 30%,
-            rgba(255, 174, 35, 0.18),
+            ellipse at 75% 30%,
+            rgba(255, 174, 35, 0.12),
             transparent 40%
         ),
         radial-gradient(
-            circle at 50% 85%,
-            rgba(218, 168, 57, 0.12),
-            transparent 45%
+            ellipse at 50% 80%,
+            rgba(218, 168, 57, 0.08),
+            transparent 50%
         );
 
     animation: goldenGlow 8s ease-in-out infinite alternate;
 }
 
+/* Gerakan cahaya perlahan */
 @keyframes goldenGlow {
     0% {
-        opacity: 0.5;
+        opacity: 0.55;
         transform: scale(1);
     }
 
-    100% {
+    50% {
         opacity: 1;
         transform: scale(1.08);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: scale(1.03);
     }
 }
