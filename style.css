@@ -25,7 +25,7 @@ body::before {
             rgba(8, 6, 3, 0.25),
             rgba(8, 6, 3, 0.35)
         ),
-        url("./naga.png") center center / 75% auto no-repeat;
+        url("./naga.png") center center / 65% auto no-repeat;
 
     z-index: -1;
     pointer-events: none;
