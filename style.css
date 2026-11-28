@@ -578,7 +578,7 @@ body::after {
     z-index: 1;
 
     transform: translate(-125px, -9px);
-    scale: 0.95;
+    scale: 0.80;
 }
 
 /* Cahaya emas fokus di belakang card statistik */
