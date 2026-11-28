@@ -566,14 +566,6 @@ body::after {
         0 0 24px rgba(218, 168, 57, 0.06);
 }
 
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 /* =====================================
    IDXLINE - DRAGON ENERGY GLOW
@@ -586,29 +578,31 @@ body::after {
     z-index: 1;
 }
 
-/* Cahaya emas fokus di belakang card */
+/* Cahaya emas fokus di belakang card statistik */
 .hero-stat-group::before {
     content: "";
     position: absolute;
 
-    top: 15%;
-    left: 25%;
-    width: 50%;
-    height: 70%;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
 
     background: radial-gradient(
         ellipse at center,
-        rgba(255, 175, 55, 0.32) 0%,
-        rgba(255, 135, 25, 0.16) 40%,
+        rgba(255, 175, 55, 0.28) 0%,
+        rgba(255, 135, 25, 0.14) 35%,
+        rgba(255, 100, 10, 0.05) 60%,
         transparent 75%
     );
 
-    filter: blur(45px);
-    opacity: 0.85;
+    filter: blur(28px);
+    opacity: 0.8;
 
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 }
+
 
 /* Garis energi di bawah card */
 .hero-stat-group::after {
