@@ -574,3 +574,72 @@ body::after {
         transform: rotate(360deg);
     }
 }
+
+/* =====================================
+   IDXLINE - DRAGON ENERGY GLOW
+   Khusus area statistik RTP
+===================================== */
+
+.hero-stat-group {
+    position: relative;
+    isolation: isolate;
+    z-index: 1;
+}
+
+/* Cahaya emas di belakang card */
+.hero-stat-group::before {
+    content: "";
+    position: absolute;
+
+    inset: -45px -35px;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(255, 175, 45, 0.38) 0%,
+            rgba(255, 115, 20, 0.22) 38%,
+            transparent 72%
+        );
+
+    filter: blur(38px);
+    opacity: 0.9;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Garis energi di bawah card */
+.hero-stat-group::after {
+    content: "";
+    position: absolute;
+
+    left: 12%;
+    right: 12%;
+    bottom: -20px;
+
+    height: 35px;
+
+    border-bottom: 2px solid rgba(255, 190, 65, 0.75);
+    border-radius: 0 0 50% 50%;
+
+    box-shadow:
+        0 8px 20px rgba(255, 160, 25, 0.45),
+        0 0 25px rgba(255, 190, 65, 0.35);
+
+    opacity: 0.7;
+    pointer-events: none;
+
+    animation: dragon-energy-wave 4s ease-in-out infinite;
+}
+
+@keyframes dragon-energy-wave {
+    0%, 100% {
+        transform: scaleX(0.92);
+        opacity: 0.45;
+    }
+
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
