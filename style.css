@@ -750,3 +750,44 @@ body::after {
     position: relative;
     z-index: 1;
 }
+
+/* FIX POSISI KOTAK STATISTIK DI HP */
+@media (max-width: 600px) {
+
+  .hero-stat-group {
+    transform: none !important;
+    scale: 1 !important;
+
+    position: relative;
+    left: auto;
+    right: auto;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    box-sizing: border-box;
+  }
+
+  /* Kotak RTP RATA-RATA */
+  .hero-average {
+    grid-column: 1 / -1;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Kotak GAME dan PROVIDER */
+  .hero-stat-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+}
