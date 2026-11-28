@@ -643,3 +643,84 @@ body::after {
         opacity: 1;
     }
 }
+
+/* =====================================
+   FIX LAYOUT HERO STATISTIK
+===================================== */
+
+/* Kembalikan layout: teks kiri, statistik kanan */
+.hero-dashboard {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.62fr);
+    align-items: stretch;
+}
+
+/* RTP besar kiri, Game dan Provider kanan */
+.hero-stat-group {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr);
+    gap: 24px;
+    align-items: stretch;
+
+    position: relative;
+    isolation: isolate;
+    min-width: 0;
+}
+
+/* Card RTP */
+.hero-average {
+    min-width: 0;
+    height: 100%;
+}
+
+/* Game dan Provider tetap bertumpuk */
+.hero-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    min-width: 0;
+}
+
+.hero-stat-card {
+    min-width: 0;
+}
+
+/* Hilangkan garis energi yang kemarin melintang */
+.hero-stat-group::after {
+    content: none;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .hero-dashboard {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text {
+        grid-column: 1 / -1;
+    }
+
+    .hero-stat-group {
+        grid-column: 1 / -1;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+    .hero-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-stat-group {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 12px;
+    }
+}
