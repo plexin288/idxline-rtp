@@ -577,7 +577,7 @@ body::after {
     isolation: isolate;
     z-index: 1;
 
-    transform: translate(-125px, -9px);
+    transform: translate(-145px, -9px);
     scale: 0.80;
 }
 
