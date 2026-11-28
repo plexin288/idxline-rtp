@@ -724,3 +724,44 @@ body::after {
         gap: 12px;
     }
 }
+
+/* =====================================
+   STAT CARD - VISIBLE GOLDEN GLOW FIX
+===================================== */
+
+.hero-stat-group {
+    position: relative;
+    isolation: isolate;
+    overflow: visible !important;
+}
+
+/* Pastikan cahaya tampil di belakang card */
+.hero-stat-group::before {
+    content: "";
+    position: absolute;
+
+    top: -70px;
+    right: -70px;
+    bottom: -70px;
+    left: -70px;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 170, 35, 0.65) 0%,
+        rgba(255, 115, 20, 0.38) 35%,
+        rgba(255, 80, 10, 0.16) 60%,
+        transparent 78%
+    );
+
+    filter: blur(35px);
+    opacity: 1;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Card tetap berada di depan cahaya */
+.hero-stat-group > * {
+    position: relative;
+    z-index: 1;
+}
