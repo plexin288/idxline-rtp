@@ -586,23 +586,25 @@ body::after {
     z-index: 1;
 }
 
-/* Cahaya emas di belakang card */
+/* Cahaya emas fokus di belakang card */
 .hero-stat-group::before {
     content: "";
     position: absolute;
 
-    inset: -45px -35px;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+    height: 70%;
 
-    background:
-        radial-gradient(
-            ellipse at 50% 50%,
-            rgba(255, 175, 45, 0.38) 0%,
-            rgba(255, 115, 20, 0.22) 38%,
-            transparent 72%
-        );
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 175, 55, 0.32) 0%,
+        rgba(255, 135, 25, 0.16) 40%,
+        transparent 75%
+    );
 
-    filter: blur(38px);
-    opacity: 0.9;
+    filter: blur(45px);
+    opacity: 0.85;
 
     z-index: -1;
     pointer-events: none;
@@ -733,31 +735,6 @@ body::after {
     position: relative;
     isolation: isolate;
     overflow: visible !important;
-}
-
-/* Pastikan cahaya tampil di belakang card */
-.hero-stat-group::before {
-    content: "";
-    position: absolute;
-
-    top: -70px;
-    right: -70px;
-    bottom: -70px;
-    left: -70px;
-
-    background: radial-gradient(
-        ellipse at center,
-        rgba(255, 170, 35, 0.65) 0%,
-        rgba(255, 115, 20, 0.38) 35%,
-        rgba(255, 80, 10, 0.16) 60%,
-        transparent 78%
-    );
-
-    filter: blur(35px);
-    opacity: 1;
-
-    z-index: 0;
-    pointer-events: none;
 }
 
 /* Card tetap berada di depan cahaya */
